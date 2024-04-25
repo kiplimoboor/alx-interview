@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module implementing pascal's triangle"""
 
 
@@ -11,6 +12,8 @@ def pascal_triangle(n):
         triangle [list]: a list of lists that is the triangle
     """
 
+    if n <= 0:
+        return [[]]
     triangle = [[1]]
 
     for _ in range(1, n):
