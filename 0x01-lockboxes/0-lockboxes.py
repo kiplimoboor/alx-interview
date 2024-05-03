@@ -21,9 +21,9 @@ def canUnlockAll(boxes):
 
     while len(closed) > 0:
         key = closed.pop()
-        if not key or key in opened or key > noOfBoxes:
+        if not key or key in opened or key >= noOfBoxes:
             continue
         opened.add(key)
-        closed = closed.union(boxes[key])
+        closed = closed.union(boxes[key]).difference(opened)
 
     return len(opened) == noOfBoxes
