@@ -24,6 +24,6 @@ def canUnlockAll(boxes):
         if not key or key in opened or key > noOfBoxes:
             continue
         opened.add(key)
-        closed = closed.union(boxes[key]).difference(opened)
+        closed = closed.union(boxes[key])
 
     return len(opened) == noOfBoxes
