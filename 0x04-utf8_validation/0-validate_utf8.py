@@ -19,7 +19,7 @@ def validUTF8(data):
             if i >> 7 != 0b0:
                 return False
 
-            if i >> 5 == 0b110:
+            if i >> 5 == 0b110 or i >> 5 == 0b1110:
                 count = 1
             elif i >> 4 == 0b1110:
                 count = 2
