@@ -25,7 +25,7 @@ def validUTF8(data):
             elif byte >> 7 != 0b00000000:
                 return False
         else:
-            if byte >> 6 != 0b10:
+            if byte >> 6 != 0b00000010:
                 return False
             count -= 1
 
