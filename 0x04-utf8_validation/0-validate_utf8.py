@@ -14,18 +14,19 @@ def validUTF8(data):
 
     count = 0
 
-    for i in data:
+    for byte in data:
         if count == 0:
-            if i >> 5 == 0b110:
+            if byte >> 5 == 0b00000110:
                 count = 1
-            elif i >> 4 == 0b1110:
+            elif byte >> 4 == 0b00001110:
                 count = 2
-            elif i >> 3 == 0b11110:
+            elif byte >> 3 == 0b00011110:
                 count = 3
-            elif i >> 7 == 0b1:
+            elif byte >> 7 != 0b00000000:
                 return False
         else:
-            if i >> 6 != 0b10:
+            if byte >> 6 != 0b10:
                 return False
             count -= 1
+
     return count == 0
