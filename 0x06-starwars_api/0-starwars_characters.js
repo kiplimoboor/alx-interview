@@ -3,9 +3,7 @@
 /* eslint-disable space-before-function-paren */
 
 const request = require('request');
-
 const filmUrl = `https://swapi-api.alx-tools.com/api/films/${process.argv[2]}/`;
-
 const peopleUrl = 'https://swapi-api.alx-tools.com/api/people/';
 
 fetchData(peopleUrl, (people) => {
